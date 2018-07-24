@@ -1,18 +1,12 @@
 <template>
-    <input-editor-form-group :label="experimentInput.name" :label-for="experimentInput.name"
-        :state="validationState" :feedback-messages="validationFeedback">
-        Custom StringInputEditor
-        <b-form-input :id="experimentInput.name" type="text" v-model="data"
-            :placeholder="experimentInput.userFriendlyDescription"
-            :state="validationState"
-            @input="valueChanged"/>
-    </input-editor-form-group>
+    <b-form-input :id="id" type="text" v-model="data"
+        :placeholder="experimentInput.userFriendlyDescription"
+        :state="componentValidState"
+        @input="valueChanged"/>
 </template>
 
 <script>
-import InputEditorFormGroup from 'django-airavata-workspace-views/static/django_airavata_workspace/js/components/experiment/input-editors/InputEditorFormGroup'
-import InputEditorMixin from 'django-airavata-workspace-views/static/django_airavata_workspace/js/components/experiment/input-editors/InputEditorMixin'
-// import InputEditorMixin from './InputEditorMixin'
+import {InputEditorMixin} from 'django-airavata-workspace-plugin-api'
 
 export default {
     name: 'string-input-editor',
@@ -22,9 +16,6 @@ export default {
             type: String,
             required: true,
         },
-    },
-    components: {
-        InputEditorFormGroup,
     },
 }
 </script>
