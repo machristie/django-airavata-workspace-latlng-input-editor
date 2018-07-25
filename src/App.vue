@@ -5,7 +5,7 @@
         <div class="col">
           <b-form novalidate>
             <b-form-group :label="experimentInput.name" :label-for="experimentInput.name" :state="state">
-              <string-input-editor v-model="experimentInput.value"
+              <custom-input-editor v-model="experimentInput.value"
                 :id="experimentInput.name"
                 :experiment="experiment"
                 :experiment-input="experimentInput"/>
@@ -24,13 +24,13 @@
 </template>
 
 <script>
-import StringInputEditor from './components/StringInputEditor.vue'
+import CustomInputEditor from './components/CustomInputEditor.vue'
 import {models} from 'django-airavata-api'
 
 export default {
   name: 'app',
   components: {
-    StringInputEditor,
+    CustomInputEditor,
   },
   data: function() {
     const experimentInput = new models.InputDataObjectType();

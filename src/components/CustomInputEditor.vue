@@ -9,7 +9,7 @@
 import {InputEditorMixin} from 'django-airavata-workspace-plugin-api'
 
 export default {
-    name: 'string-input-editor',
+    name: 'custom-input-editor',
     mixins: [InputEditorMixin],
     props: {
         value: {
