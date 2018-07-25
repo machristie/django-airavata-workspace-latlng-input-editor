@@ -4,8 +4,10 @@
 1. Fork this repository.
 2. Change the name of CustomInputEditor.vue as appropriate. Make sure to also
 change the `name ` attribute as well to match.
-3. Modify your custom input editor as appropriate. Feel free to `npm install` additional dependencies that your custom input editor requires.
-4. Run `npm run serve` to preview your custom input editor component.
+3. Update App.vue to change the name of CustomInputEditor to match the name
+of your component.
+4. Modify your custom input editor as appropriate. Feel free to `npm install` additional dependencies that your custom input editor requires.
+5. Run `npm run serve` to preview your custom input editor component.
 
 # Publishing custom input editor to NPM repository
 
