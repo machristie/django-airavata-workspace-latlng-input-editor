@@ -89,10 +89,12 @@ export default {
   },
   methods: {
     metadataUpdated: function(value) {
-      this.experimentInput.metaData = JSON.parse(value);
+      if (this.metadataState) {
+        this.experimentInput.metaData = JSON.parse(value);
+      }
     },
     formatJSON: function(jsonString) {
-      return JSON.stringify(JSON.parse(jsonString), null, 4);
+      return this.metadataState ? JSON.stringify(JSON.parse(jsonString), null, 4) : jsonString;
     },
     valueChanged: function(value) {
       if (value instanceof File) {
