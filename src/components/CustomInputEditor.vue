@@ -28,10 +28,5 @@ export default {
             required: true,
         },
     },
-    computed: {
-        editorConfig: function() {
-            return this.experimentInput.editorConfig;
-        }
-    }
 }
 </script>
