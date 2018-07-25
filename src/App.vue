@@ -97,7 +97,7 @@ export default {
       return this.metadataState ? JSON.stringify(JSON.parse(jsonString), null, 4) : jsonString;
     },
     valueChanged: function(value) {
-      if (value instanceof File) {
+      if (typeof value === 'object' && value instanceof File) {
         if (/^text\//.test(value.type)) {
           const reader = new FileReader();
           reader.addEventListener("loadend", () => this.previewValue = reader.result);
@@ -105,7 +105,7 @@ export default {
         } else {
           this.previewValue = "No preview exists for files of type " + value.type;
         }
-      } else if (value instanceof String) {
+      } else if (typeof value === 'string') {
         this.previewValue = value;
       }
     }
