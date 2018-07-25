@@ -9,6 +9,11 @@
         :state="componentValidState"
         :rows="editorConfig.rows"
         @input="valueChanged"/> -->
+    <!-- file upload example -->
+    <!-- <b-form-file :id="id" v-model="data"
+        :placeholder="experimentInput.userFriendlyDescription"
+        :state="componentValidState"
+        @input="valueChanged"/> -->
 </template>
 
 <script>

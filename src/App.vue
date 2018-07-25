@@ -27,7 +27,8 @@
           <custom-input-editor v-model="experimentInput.value"
             :id="experimentInput.name"
             :experiment="experiment"
-            :experiment-input="experimentInput"/>
+            :experiment-input="experimentInput"
+            @input="valueChanged"/>
           <ul v-if="feedbackMessages && feedbackMessages.length > 1">
               <li v-for="feedback in feedbackMessages" :key="feedback">{{ feedback }}</li>
           </ul>
@@ -35,6 +36,14 @@
               {{ feedbackMessages[0] }}
           </div>
         </b-form-group>
+      </b-card>
+      <b-card title="Input Value Preview" class="mt-3">
+        <b-form-textarea id="input-value-preview"
+                  :value="previewValue"
+                  :rows="10"
+                  :max-rows="20"
+                  :disabled="true">
+        </b-form-textarea>
       </b-card>
     </div>
   </div>
@@ -62,6 +71,7 @@ export default {
       state: null,
       feedbackMessages: [],
       metadataString: JSON.stringify(experimentInput.metaData, null, 4),
+      previewValue: null,
     }
   },
   computed: {
@@ -83,6 +93,19 @@ export default {
     },
     formatJSON: function(jsonString) {
       return JSON.stringify(JSON.parse(jsonString), null, 4);
+    },
+    valueChanged: function(value) {
+      if (value instanceof File) {
+        if (/^text\//.test(value.type)) {
+          const reader = new FileReader();
+          reader.addEventListener("loadend", () => this.previewValue = reader.result);
+          reader.readAsText(value);
+        } else {
+          this.previewValue = "No preview exists for files of type " + value.type;
+        }
+      } else if (value instanceof String) {
+        this.previewValue = value;
+      }
     }
   }
 }
