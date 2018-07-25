@@ -10,7 +10,7 @@
   "main": "dist/StringInputEditor.common.js",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
-    "bootstrap-vue": "^1.5.1",
+    "bootstrap-vue": "^2.0.0-rc.11",
     "django-airavata-api": "^1.0.0-beta.2",
     "django-airavata-workspace-plugin-api": "^1.0.0-beta",
     "vue": "^2.5.16"
