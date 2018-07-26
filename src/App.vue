@@ -71,7 +71,7 @@ export default {
       state: null,
       feedbackMessages: [],
       metadataString: JSON.stringify(experimentInput.metaData, null, 4),
-      previewValue: null,
+      previewValue: experimentInput.value,
     }
   },
   computed: {
