@@ -8,5 +8,8 @@ module.exports = {
                                 'bootstrap',
                                 'bootstrap-vue']
         }
+    },
+    css: {
+        extract: false
     }
 }

@@ -24,7 +24,7 @@
       </b-card>
       <b-card title="Input Editor" class="mt-3">
         <b-form-group :label="experimentInput.name" :label-for="experimentInput.name" :state="state">
-          <custom-input-editor v-model="experimentInput.value"
+          <lat-lng-input-editor v-model="experimentInput.value"
             :id="experimentInput.name"
             :experiment="experiment"
             :experiment-input="experimentInput"
@@ -50,13 +50,13 @@
 </template>
 
 <script>
-import CustomInputEditor from './components/CustomInputEditor.vue'
+import LatLngInputEditor from './components/LatLngInputEditor.vue'
 import {models} from 'django-airavata-api'
 
 export default {
   name: 'app',
   components: {
-    CustomInputEditor,
+    LatLngInputEditor,
   },
   data: function() {
     const experimentInput = new models.InputDataObjectType();
@@ -64,7 +64,7 @@ export default {
     experimentInput.userFriendlyDescription = "Type the value here";
     experimentInput.isRequired = true;
     experimentInput.metaData = {editor: {config:{}}};
-    experimentInput.value = "";
+    experimentInput.value = "51.505, -0.09";
     return {
       experiment: new models.Experiment(),
       experimentInput: experimentInput,
