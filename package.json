@@ -2,6 +2,7 @@
   "name": "django-airavata-workspace-custom-input-editor",
   "version": "0.1.0",
   "private": true,
+  "license": "Apache-2.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name CustomInputEditor src/components/CustomInputEditor.vue",
