@@ -21,10 +21,12 @@ additional dependencies that your custom input editor requires.
      name your custom input editor package
      `django-airavata-workspace-radio-button-input-editor`. Please prefix your
      custom input editor with `django-airavata-workspace`.
-2. Change the name of the component in `scripts` `build`
-3. Create an account on npmjs.com and log into your account with `npm
+   * Update the name of the component in the `main` property.
+   * Change the name of the componet in the `scripts` `build`.
+   * Change `private` to `false`.
+2. Create an account on npmjs.com and log into your account with `npm
 adduser`. See [npm
 docs](https://docs.npmjs.com/getting-started/publishing-npm-packages) for
 more information.
-4. Run `npm run build`
-5. Run `npm publish`
+3. Run `npm run build`
+4. Run `npm publish`
